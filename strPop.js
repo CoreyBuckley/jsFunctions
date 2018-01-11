@@ -5,10 +5,8 @@ str.pop = function (begin, end) { //uses slice() but subtracts the slice from th
   if (begin !== undefined) { //make sure we were passed in at least 1 argument
     if (end === undefined) { //if function was passed in only a beginning index
       part = str.value.slice(begin,end); //use slice instead of substring because it's more flexible with negative indexes.
-      if (begin < 0) { //modify the original value block
-        //The 'substring' will be from left to right, so the modified string will be from 0 to the beginning index of the substring.
-        str.value = str.value.slice(0, Math.abs(begin));
-      }
+      //The 'substring' will be from left to right, so the modified string will be from 0 to the beginning index of the substring.
+      str.value = str.value.slice(0, Math.abs(begin));
     }
     else {
       part = str.value.slice(begin, end);
